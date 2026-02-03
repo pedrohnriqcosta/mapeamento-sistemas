@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificação de Responsáveis - Sistemas</title>
+    <title>Mapeamento de Sistemas - Gestão de Acesso</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -17,47 +17,104 @@
 
         const SISTEMAS_DATA = [{"sistema":"Accesstage","setor":"Operações","responsavel":"Lucas Bicalho De Freitas"},{"sistema":"ACRONIS","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"AD Windows","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Aikido (Arquitetura TI)","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"AIVIDEO.COM","setor":"Tecnologia","responsavel":"Vanuza Prestes (Ivan)"},{"sistema":"ALTERDATA SOFTWARE","setor":"FinanEst","responsavel":"Brunna Karoline"},{"sistema":"ARQUIVEI","setor":"FinanEst","responsavel":"Brunna Karoline"},{"sistema":"Atendas","setor":"Operações","responsavel":"Carine Santos"},{"sistema":"AutoTrans","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"AWS","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"AZURE","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"AzureDevops","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Birdie Plataform","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"BITLY.COM","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"BRASILABERTO.COM","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Button Manager","setor":"Recepção","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Calendly","setor":"Recepção","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"CANVA","setor":"FinanEst","responsavel":"Thiago da Silva Chisnandes"},{"sistema":"CANVA","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"CANVA","setor":"Operações","responsavel":"Rennan Moura"},{"sistema":"CANVA","setor":"P&C","responsavel":"Rennan Vilar"},{"sistema":"CANVA","setor":"Recepção","responsavel":"Rennan Vilar"},{"sistema":"CASA PROMODIGITAL","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"CASA PROMODIGITAL","setor":"Operações","responsavel":"GT7"},{"sistema":"Control ID","setor":"Recepção","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"ConvertAPI","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Copilot","setor":"Operações","responsavel":"Lucas Bicalho De Freitas"},{"sistema":"Correios coleta envio reverso","setor":"Recepção","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"Correios Empresa","setor":"Recepção","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"Correios pré-postagem","setor":"Recepção","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"Cursor AI (Arquitetura TI)","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Databricks","setor":"CRM","responsavel":"Bruno Nunes de Souza Santos"},{"sistema":"Datadog (Arquitetura TI)","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Datalake","setor":"Operações","responsavel":"Juliano Ávila"},{"sistema":"DigSac","setor":"FinanEst","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"DJE","setor":"FinanEst","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"Ecac","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"ECONET PUBLICACOES PERIODICAS","setor":"FinanEst","responsavel":"Lorrayne Theza"},{"sistema":"Eficaz","setor":"Presidência","responsavel":"Sandro Yamano"},{"sistema":"ELVENWORKS SOLUCOES EM TECNOLOGIA LTDA","setor":"Tecnologia","responsavel":"Felipe Silva Santana dos Santos"},{"sistema":"ENVATO","setor":"P&C","responsavel":"Rennan Vilar"},{"sistema":"ESCALLO","setor":"CRM","responsavel":"Andressa Rodrigues Morato Maia"},{"sistema":"eSocial","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"FACEBOOK SERVICOS ONLINE DO BRASIL LTDA.","setor":"CRM","responsavel":"Andressa Rodrigues Morato Maia"},{"sistema":"FGTS Digital","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"FIGMA MONTHLY RENEWAL","setor":"Tecnologia","responsavel":"Giovanna de Araujo Giacon"},{"sistema":"FREEPIK COMPANY","setor":"Tecnologia","responsavel":"Giovanna de Araujo Giacon"},{"sistema":"GCP","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"GeoFusion","setor":"Presidência","responsavel":"Sandro Yamano"},{"sistema":"GITHUB","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Glassdoor","setor":"P&C","responsavel":"Rennan Vilar"},{"sistema":"Go Daddy - Domínios e Certificados","setor":"Tecnologia","responsavel":"Rodney Santos"},{"sistema":"GPO Windows","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"GPT Enterprise","setor":"Operações","responsavel":"Carine Santos"},{"sistema":"GPTW","setor":"P&C","responsavel":"Maiara Schwengber Corrêa"},{"sistema":"GT E-COMMERCE","setor":"Tecnologia","responsavel":" "},{"sistema":"GUPY","setor":"P&C","responsavel":"Marcela Reggini Moraes"},{"sistema":"HOLMES TECHNOLOGY LTDA.","setor":"FinanEst","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"Hostgator","setor":"Operações","responsavel":" "},{"sistema":"HotspotNOW","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"HubSpot","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"HUMAN SOLUTIONS BRASIL","setor":"P&C","responsavel":"Rennan Vilar"},{"sistema":"I18NEXUS","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Ifood Benefícios","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"Illustration","setor":"P&C","responsavel":"Bráulio Piovezana Rinco"},{"sistema":"Indesign","setor":"P&C","responsavel":"Bráulio Piovezana Rinco"},{"sistema":"INFOWAY","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"INFOWAY","setor":"FinanEst","responsavel":"Brunna Karoline"},{"sistema":"Itaú Banking","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"JetBrains Americas INC","setor":"Tecnologia","responsavel":" "},{"sistema":"Kaspersky Security Center","setor":"Tecnologia","responsavel":"Vanuza Prestes / Rodney Santos"},{"sistema":"LinkedIn","setor":"FinanEst","responsavel":"Ricardo Estevão de Almeida"},{"sistema":"LinkedIn","setor":"P&C","responsavel":"Marcela Reggini Moraes"},{"sistema":"LUCIDCHART (LUCID SOFTWARE INC)","setor":"FinanEst","responsavel":"Jézi Fernando Oliveira"},{"sistema":"Magazine Luiza ","setor":"FinanEst","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"Mercado Livre","setor":"FinanEst","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"MICROSOFT VISIO","setor":"P&C","responsavel":" "},{"sistema":"MIRO.COM","setor":"CRM","responsavel":"Andressa Rodrigues Morato Maia"},{"sistema":"MIRO.COM","setor":"P&C","responsavel":" "},{"sistema":"MIRO.COM","setor":"Tecnologia","responsavel":" "},{"sistema":"MIRO.COM","setor":"FinanEst","responsavel":" "},{"sistema":"MIXPANEL ( NEXWAVE SERVICOS DE TECNOLOGIA)","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"MONDAY","setor":"FinanEst","responsavel":"Brunna Karoline"},{"sistema":"MONDAY","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"MONDAY","setor":"Operações","responsavel":"Aline de Goes Camargo"},{"sistema":"MONDAY","setor":"P&C","responsavel":" "},{"sistema":"MONDAY","setor":"Tecnologia","responsavel":" "},{"sistema":"N8N - CONTABO.COM","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"NOTION","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"NOTION","setor":"Tecnologia","responsavel":"Luis Fernando Kalil Rosenburg de Castro"},{"sistema":"NVE*ANYDESK","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"OBVIO BRASIL","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"Odontoprev","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"OMIEXPERIENCE LTDA.","setor":"FinanEst","responsavel":"Lorrayne Theza"},{"sistema":"OpenAI","setor":"FinanEst","responsavel":"Thiago da Silva Chisnandes"},{"sistema":"OpenAI","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"OpenAI","setor":"P&C","responsavel":"Conta Gratuíta"},{"sistema":"OpenAI","setor":"Tecnologia","responsavel":"Vanuza Prestes (Dan)"},{"sistema":"Passaporte Refuturiza (Universidade de Todos)","setor":"P&C","responsavel":"Michele Cristina de Souza Oliveira"},{"sistema":"PfSense","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Photoshop","setor":"P&C","responsavel":"Bráulio Piovezana Rinco"},{"sistema":"Plataforma 360 Refuturiza","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"Plataforma 360 Refuturiza","setor":"P&C","responsavel":"Camila da Silva Andrade "},{"sistema":"Portal do Empregador","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"POSTMAN BASIC","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Power BI","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"Power BI","setor":"Operações","responsavel":"Caterine Nunes Barbosa"},{"sistema":"Power BI","setor":"FinanEst","responsavel":"Thiago da Silva Chisnandes"},{"sistema":"QUADCOMM","setor":"P&C","responsavel":"Bráulio Piovezana Rinco"},{"sistema":"QultureRocks","setor":"Presidência","responsavel":"Sandro Yamano"},{"sistema":"READ AI","setor":"FinanEst","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"RECRUTAMENTO E SELEÇÃO (TESTE DE PERFIL E COMPORTAMENTAL)","setor":"P&C","responsavel":"Marcela Reggini Moraes"},{"sistema":"Registro.br","setor":"Tecnologia","responsavel":"Vanuza Prestes / Rodney Santos"},{"sistema":"Registros.com","setor":"Tecnologia","responsavel":" "},{"sistema":"Reoon","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"RHiD","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"Safepar","setor":"Presidência","responsavel":"Samara dos Reis Ferreira"},{"sistema":"SAP Licenciamento","setor":"FinanEst","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"Satélitti ","setor":"FinanEst","responsavel":" "},{"sistema":"Satélitti ","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"Satélitti ","setor":"Operações","responsavel":" "},{"sistema":"SCI - SANTA CATARINA INFORMATICA LTDA","setor":"FinanEst","responsavel":"Brunna Karoline"},{"sistema":"SCI - SANTA CATARINA INFORMATICA LTDA","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"SERVICENOW BRASIL GERENCIAMENTO DE SERVICOS LTDA.","setor":"Tecnologia","responsavel":"Vanuza Prestes"},{"sistema":"SIE - Servidor de cursos da Refuturiza","setor":"P&C","responsavel":"Michele Cristina de Souza Oliveira"},{"sistema":"SIMETRIK BRASIL LTDA","setor":"FinanEst","responsavel":"Caroline Paixão Vieira de Sena"},{"sistema":"SIMETRIK BRASIL LTDA","setor":"Operações","responsavel":"Lucas Bicalho De Freitas"},{"sistema":"Sistema de Gestão de Contratos","setor":"FinanEst","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"SITE BLINDADO ","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Sites gerenciamento Apple","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"SmartShare","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"Snyk","setor":"Tecnologia","responsavel":"Rodney Santos"},{"sistema":"Sodexo","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"SPANDACOM","setor":"P&C","responsavel":"Camila da Silva Andrade "},{"sistema":"Spread.chat (AMPELMA)","setor":"CRM","responsavel":"Andressa Rodrigues Morato Maia"},{"sistema":"SQL Server","setor":"Operações","responsavel":"Lucas Bicalho"},{"sistema":"SVA (Saúde Vale do Aço)","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"TecnoByte","setor":"Presidência","responsavel":"Samara dos Reis Ferreira"},{"sistema":"TERAVOZ TELECOM TELECOMUNICACOES LTDA(Twilio)","setor":"CRM","responsavel":"Ulisses Leandro Carvalho Ferreira"},{"sistema":"Testery (Arquitetura TI)","setor":"Tecnologia","responsavel":" "},{"sistema":"TOTVS TECNOLOGIA EM SOFTWARE DE GESTAO LTDA (FEEDZ)","setor":"P&C","responsavel":"Elisangela Pedro Rodrigues Oliveira"},{"sistema":"Trello","setor":"P&C","responsavel":" "},{"sistema":"Uber Empresas","setor":"FinanEst","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"UniVale","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"USISAUDE","setor":"P&C","responsavel":"Nubia Aquino"},{"sistema":"VmWare","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"},{"sistema":"VOLL","setor":"FinanEst","responsavel":"Kettuly Fernanda Alves de Amorim Santiago"},{"sistema":"WEBSIA","setor":"P&C","responsavel":"Bráulio Piovezana Rinco"},{"sistema":"Whatsapp Business","setor":"Recepção","responsavel":"Sandro Yamano"},{"sistema":"Zabbix","setor":"Tecnologia","responsavel":"Ronaldo Bruno de Souza Santos"}];
         const SETORES_DISPONIVEIS = ['Operações', 'Tecnologia', 'FinanEst', 'P&C', 'CRM', 'Recepção', 'Presidência'];
-        const USUARIOS_PADRAO = { 'admin': { senha: 'admin123', nome: 'Administrador', tipo: 'admin', ativo: true, setores: [] } };
+        
+        const USUARIOS_INICIAIS = {
+            'admin': { senha: 'admin123', nome: 'Administrador', tipo: 'admin', setores: SETORES_DISPONIVEIS }
+        };
 
         function App() {
-            const [usuarios, setUsuarios] = useState(USUARIOS_PADRAO);
+            const [usuarios, setUsuarios] = useState(USUARIOS_INICIAIS);
             const [usuarioLogado, setUsuarioLogado] = useState(null);
             const [username, setUsername] = useState('');
             const [password, setPassword] = useState('');
             const [selectedSetor, setSelectedSetor] = useState('');
+            const [verificacoes, setVerificacoes] = useState({});
+            const [abaAtiva, setAbaAtiva] = useState('sistemas'); // 'sistemas' ou 'admin'
+            
+            // Estado para novo usuário
+            const [novoUser, setNovoUser] = useState({ username: '', senha: '', nome: '', setores: [] });
+
+            useEffect(() => {
+                const savedUsers = localStorage.getItem('usuarios_v2');
+                if (savedUsers) setUsuarios(JSON.parse(savedUsers));
+                
+                const savedVerif = localStorage.getItem('verificacoes_v2');
+                if (savedVerif) setVerificacoes(JSON.parse(savedVerif));
+            }, []);
+
+            const salvarUsuarios = (novos) => {
+                setUsuarios(novos);
+                localStorage.setItem('usuarios_v2', JSON.stringify(novos));
+            };
+
+            const salvarVerificacoes = (novas) => {
+                setVerificacoes(novas);
+                localStorage.setItem('verificacoes_v2', JSON.stringify(novas));
+            };
 
             const handleLogin = (e) => {
                 e.preventDefault();
                 const user = usuarios[username];
                 if (user && user.senha === password) {
                     setUsuarioLogado({ username, ...user });
+                    // Selecionar o primeiro setor disponível para o usuário
+                    if (user.setores.length > 0) setSelectedSetor(user.setores[0]);
                 } else {
                     alert('Credenciais inválidas');
                 }
             };
 
+            const toggleSetorNovoUsuario = (setor) => {
+                const novosSetores = novoUser.setores.includes(setor)
+                    ? novoUser.setores.filter(s => s !== setor)
+                    : [...novoUser.setores, setor];
+                setNovoUser({ ...novoUser, setores: novosSetores });
+            };
+
+            const criarUsuario = (e) => {
+                e.preventDefault();
+                if (!novoUser.username || !novoUser.senha || novoUser.setores.length === 0) {
+                    alert('Preencha todos os campos e selecione ao menos um setor');
+                    return;
+                }
+                if (usuarios[novoUser.username]) {
+                    alert('Usuário já existe');
+                    return;
+                }
+                const novosUsuarios = { ...usuarios, [novoUser.username]: { ...novoUser, tipo: 'user' } };
+                salvarUsuarios(novosUsuarios);
+                setNovoUser({ username: '', senha: '', nome: '', setores: [] });
+                alert('Usuário criado com sucesso!');
+            };
+
+            const excluirUsuario = (userKey) => {
+                if (userKey === 'admin') return;
+                if (confirm(`Deseja excluir o usuário ${userKey}?`)) {
+                    const novos = { ...usuarios };
+                    delete novos[userKey];
+                    salvarUsuarios(novos);
+                }
+            };
+
             if (!usuarioLogado) {
                 return (
-                    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-                        <form onSubmit={handleLogin} className="bg-white p-8 rounded shadow-md w-full max-w-md">
-                            <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
-                            <div className="space-y-4">
-                                <input 
-                                    type="text" 
-                                    placeholder="Usuário" 
-                                    className="block w-full p-3 border rounded"
-                                    value={username}
-                                    onChange={e => setUsername(e.target.value)}
-                                />
-                                <input 
-                                    type="password" 
-                                    placeholder="Senha" 
-                                    className="block w-full p-3 border rounded"
-                                    value={password}
-                                    onChange={e => setPassword(e.target.value)}
-                                />
-                                <button className="w-full bg-indigo-600 text-white p-3 rounded font-bold hover:bg-indigo-700 transition">
-                                    Entrar
+                    <div className="min-h-screen flex items-center justify-center bg-slate-100">
+                        <form onSubmit={handleLogin} className="bg-white p-10 rounded-2xl shadow-xl w-full max-w-md border border-slate-200">
+                            <div className="text-center mb-8">
+                                <h1 className="text-3xl font-extrabold text-slate-900">Mapeamento</h1>
+                                <p className="text-slate-500 mt-2">Entre com suas credenciais</p>
+                            </div>
+                            <div className="space-y-5">
+                                <div>
+                                    <label className="block text-sm font-semibold text-slate-700 mb-1">Usuário</label>
+                                    <input type="text" className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition" value={username} onChange={e => setUsername(e.target.value)} required />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-semibold text-slate-700 mb-1">Senha</label>
+                                    <input type="password" className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition" value={password} onChange={e => setPassword(e.target.value)} required />
+                                </div>
+                                <button className="w-full bg-indigo-600 text-white p-4 rounded-xl font-bold hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all active:scale-[0.98]">
+                                    Acessar Sistema
                                 </button>
                             </div>
                         </form>
@@ -66,41 +123,153 @@
             }
 
             return (
-                <div className="min-h-screen bg-gray-50 p-8">
-                    <div className="max-w-6xl mx-auto">
-                        <div className="flex justify-between items-center mb-8">
-                            <h1 className="text-3xl font-bold text-gray-900">Mapeamento de Sistemas</h1>
-                            <button onClick={() => setUsuarioLogado(null)} className="text-red-600 font-medium">Sair</button>
-                        </div>
-                        
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                            {SETORES_DISPONIVEIS.map(setor => (
-                                <button 
-                                    key={setor}
-                                    onClick={() => setSelectedSetor(setor)}
-                                    className={`p-6 border-2 rounded-xl transition ${selectedSetor === setor ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-700 border-gray-200 hover:border-indigo-300'}`}
-                                >
-                                    <span className="font-bold">{setor}</span>
-                                </button>
-                            ))}
-                        </div>
-
-                        {selectedSetor && (
-                            <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                                <div className="p-6 border-b border-gray-200 bg-gray-50">
-                                    <h2 className="text-xl font-bold text-gray-800">{selectedSetor}</h2>
+                <div className="min-h-screen bg-slate-50">
+                    {/* Header */}
+                    <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
+                        <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+                            <div className="flex items-center space-x-8">
+                                <h1 className="text-xl font-bold text-slate-900">Mapeamento de Sistemas</h1>
+                                <nav className="flex space-x-1">
+                                    <button onClick={() => setAbaAtiva('sistemas')} className={`px-4 py-2 rounded-lg font-medium transition ${abaAtiva === 'sistemas' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-500 hover:bg-slate-50'}`}>Sistemas</button>
+                                    {usuarioLogado.tipo === 'admin' && (
+                                        <button onClick={() => setAbaAtiva('admin')} className={`px-4 py-2 rounded-lg font-medium transition ${abaAtiva === 'admin' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-500 hover:bg-slate-50'}`}>Gestão de Usuários</button>
+                                    )}
+                                </nav>
+                            </div>
+                            <div className="flex items-center space-x-4">
+                                <div className="text-right hidden sm:block">
+                                    <p className="text-sm font-bold text-slate-900">{usuarioLogado.nome}</p>
+                                    <p className="text-xs text-slate-500 capitalize">{usuarioLogado.tipo}</p>
                                 </div>
-                                <div className="divide-y divide-gray-200">
-                                    {SISTEMAS_DATA.filter(s => s.setor === selectedSetor).map((s, i) => (
-                                        <div key={i} className="p-6 hover:bg-gray-50 transition">
-                                            <h3 className="font-bold text-lg text-gray-900">{s.sistema}</h3>
-                                            <p className="text-gray-600">Responsável: <span className="font-medium">{s.responsavel}</span></p>
-                                        </div>
+                                <button onClick={() => setUsuarioLogado(null)} className="p-2 text-slate-400 hover:text-red-600 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </header>
+
+                    <main className="max-w-7xl mx-auto px-6 py-8">
+                        {abaAtiva === 'sistemas' ? (
+                            <>
+                                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-8">
+                                    {usuarioLogado.setores.map(setor => (
+                                        <button key={setor} onClick={() => setSelectedSetor(setor)} className={`p-4 rounded-xl border-2 font-bold text-sm transition-all ${selectedSetor === setor ? 'bg-indigo-600 border-indigo-600 text-white shadow-lg shadow-indigo-100' : 'bg-white border-slate-200 text-slate-600 hover:border-indigo-300'}`}>
+                                            {setor}
+                                        </button>
                                     ))}
+                                </div>
+
+                                {selectedSetor && (
+                                    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                                        <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex justify-between items-center">
+                                            <h2 className="text-lg font-bold text-slate-800">{selectedSetor}</h2>
+                                            <span className="text-xs font-medium bg-slate-200 text-slate-600 px-2 py-1 rounded-full">
+                                                {SISTEMAS_DATA.filter(s => s.setor === selectedSetor).length} Sistemas
+                                            </span>
+                                        </div>
+                                        <div className="divide-y divide-slate-100">
+                                            {SISTEMAS_DATA.filter(s => s.setor === selectedSetor).map((item, i) => {
+                                                const idx = SISTEMAS_DATA.findIndex(s => s === item);
+                                                const key = `${selectedSetor}-${idx}`;
+                                                const verif = verificacoes[key] || {};
+                                                return (
+                                                    <div key={i} className="p-6 hover:bg-slate-50/50 transition">
+                                                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                                            <div className="flex-1">
+                                                                <h3 className="font-bold text-slate-900 text-lg">{item.sistema}</h3>
+                                                                <p className="text-slate-500 text-sm">Responsável: <span className="font-semibold text-slate-700">{item.responsavel}</span></p>
+                                                                {verif.status === 'discordo' && (
+                                                                    <div className="mt-3">
+                                                                        <textarea className="w-full p-3 text-sm border border-red-200 rounded-xl bg-red-50 focus:ring-2 focus:ring-red-500 outline-none" rows="2" placeholder="Descreva o motivo da divergência..." value={verif.divergencia || ''} onChange={(e) => {
+                                                                            const novas = { ...verificacoes, [key]: { ...verif, divergencia: e.target.value, data: new Date().toISOString(), user: usuarioLogado.nome } };
+                                                                            salvarVerificacoes(novas);
+                                                                        }} />
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                            <div className="flex space-x-2">
+                                                                <button onClick={() => {
+                                                                    const novas = { ...verificacoes, [key]: { ...verif, status: 'concordo', data: new Date().toISOString(), user: usuarioLogado.nome } };
+                                                                    salvarVerificacoes(novas);
+                                                                }} className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all ${verif.status === 'concordo' ? 'bg-emerald-600 text-white shadow-md shadow-emerald-100' : 'bg-slate-100 text-slate-600 hover:bg-emerald-50 hover:text-emerald-700'}`}>Concordo</button>
+                                                                <button onClick={() => {
+                                                                    const novas = { ...verificacoes, [key]: { ...verif, status: 'discordo', data: new Date().toISOString(), user: usuarioLogado.nome } };
+                                                                    salvarVerificacoes(novas);
+                                                                }} className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all ${verif.status === 'discordo' ? 'bg-rose-600 text-white shadow-md shadow-rose-100' : 'bg-slate-100 text-slate-600 hover:bg-rose-50 hover:text-rose-700'}`}>Discordo</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                )}
+                            </>
+                        ) : (
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                {/* Formulário Novo Usuário */}
+                                <div className="lg:col-span-1">
+                                    <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                                        <h2 className="text-lg font-bold text-slate-900 mb-6">Novo Usuário</h2>
+                                        <form onSubmit={criarUsuario} className="space-y-4">
+                                            <input type="text" placeholder="Nome Completo" className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500" value={novoUser.nome} onChange={e => setNovoUser({...novoUser, nome: e.target.value})} />
+                                            <input type="text" placeholder="Username" className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500" value={novoUser.username} onChange={e => setNovoUser({...novoUser, username: e.target.value})} />
+                                            <input type="password" placeholder="Senha" className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500" value={novoUser.senha} onChange={e => setNovoUser({...novoUser, senha: e.target.value})} />
+                                            
+                                            <div>
+                                                <p className="text-sm font-bold text-slate-700 mb-3">Setores Permitidos:</p>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {SETORES_DISPONIVEIS.map(s => (
+                                                        <button type="button" key={s} onClick={() => toggleSetorNovoUsuario(s)} className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition ${novoUser.setores.includes(s) ? 'bg-indigo-600 border-indigo-600 text-white' : 'bg-white border-slate-200 text-slate-500 hover:border-indigo-300'}`}>
+                                                            {s}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            <button className="w-full bg-indigo-600 text-white p-3 rounded-xl font-bold hover:bg-indigo-700 transition mt-4">Criar Usuário</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                {/* Lista de Usuários */}
+                                <div className="lg:col-span-2">
+                                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                                        <table className="w-full text-left">
+                                            <thead className="bg-slate-50 border-b border-slate-200">
+                                                <tr>
+                                                    <th className="px-6 py-4 text-sm font-bold text-slate-700">Usuário</th>
+                                                    <th className="px-6 py-4 text-sm font-bold text-slate-700">Setores</th>
+                                                    <th className="px-6 py-4 text-sm font-bold text-slate-700">Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-slate-100">
+                                                {Object.entries(usuarios).map(([key, user]) => (
+                                                    <tr key={key} className="hover:bg-slate-50/50 transition">
+                                                        <td className="px-6 py-4">
+                                                            <p className="font-bold text-slate-900">{user.nome}</p>
+                                                            <p className="text-xs text-slate-500">@{key}</p>
+                                                        </td>
+                                                        <td className="px-6 py-4">
+                                                            <div className="flex flex-wrap gap-1">
+                                                                {user.setores.map(s => (
+                                                                    <span key={s} className="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-[10px] font-bold uppercase">{s}</span>
+                                                                ))}
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-6 py-4">
+                                                            {key !== 'admin' && (
+                                                                <button onClick={() => excluirUsuario(key)} className="text-rose-500 hover:text-rose-700 font-bold text-xs">Excluir</button>
+                                                            )}
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         )}
-                    </div>
+                    </main>
                 </div>
             );
         }
